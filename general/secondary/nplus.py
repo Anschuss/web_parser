@@ -31,16 +31,14 @@ def get_title(data):
     return title
 
 
-def main(url):
+def n_pluse_one(url):
     html = get_html(url)
     data = get_data(html)
     title = get_title(data)
     link = get_link(url, data)
     html = get_html(link)
     img = get_img(html)
-    previe = {"name": "n+1", "img": img, "title": title, "link": url}
+    previe = {"name": "n+1", "img": img, "title": title, "link": url, "full_news": "n_plus.news_page"}
 
     return previe
 
-
-main("https://nplus1.ru/")

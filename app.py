@@ -3,7 +3,6 @@ from kombu import serialization
 
 from config import make_celery, Configuration
 
-
 serialization.registry._decoders.pop("application/x-python-serialize")
 
 app = Flask(__name__)
@@ -17,6 +16,9 @@ from nplus import n_plus
 
 app.register_blueprint(n_plus, url_prefix="/n_plus")
 
+from bbc import bbc
+
+app.register_blueprint(bbc, url_prefix="/bbc")
 
 client = make_celery(app)
 client.conf.update(app.config)
