@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    general
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4" style="margin-top: 20px">
+                {% for edition in content %}
+                    <div class="card text-white bg-dark" style="width: 18rem;">
+                        <img src="{{ content[edition].img }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ content[edition].name }}</h5>
+                            <p class="card-text">{{ content[edition].title }}</p>
+                            <a href="{{ url_for("n_plus.news_page", url=content[edition].link) }}" class="btn btn-primary">Читать</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,1 @@
+URL_PLUS_ONE = "https://nplus1.ru/"

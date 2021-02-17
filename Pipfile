@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+celery = "*"
+flask = "*"
+requests = "*"
+setuptools = "*"
+bs4 = "*"
+lxml = "*"
+amqp = "*"
+cryptography = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
