@@ -9,22 +9,22 @@ def get_html(url):
 
 def get_data(html):
     soup = BeautifulSoup(html, "lxml")
-    data = soup.find("section", class_="module module--promo")
+    data = soup.find("div", id="bodyContent").find("div", class_="col4a")
     return data
 
 
 def get_content(data):
-    title = data.find("a").text
+    title = data.find("h2").text
     img = data.find("img").get("src")
     return {"title": title, "img": img}
 
 
-def bbc(url):
+def dw(url):
     html = get_html(url)
     data = get_data(html)
     content = get_content(data)
-    content["name"] = "bbc"
-    content["full_news"] = "bbc.news_page"
+    content["name"] = "dw"
+    content["full_news"] = "dw.news_page"
     return content
 
 
