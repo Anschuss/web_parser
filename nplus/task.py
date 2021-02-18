@@ -27,7 +27,7 @@ def get_text(html):
     title = article.find("article").find("h1").text
     demo_body = article.find("div", class_="body js-mediator-article")
     img = demo_body.find("img").get("src")
-    txt = re.compile('[^a-zA-Zа-яА-Я., ]')
+    txt = re.compile(r'\w+[^., ]')
     body = txt.sub("", demo_body.text)
 
     return {"title": title,"img": img,"body": body}

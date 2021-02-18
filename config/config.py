@@ -9,3 +9,5 @@ class Configuration(object):
     CELERY_ACCEPT_CONTENT = ['application/json']
     CELERY_TASK_SERIALIZER = 'json'
     CELERY_RESULT_SERIALIZER = 'json'
+    CELERY_SOFT_TIME_LIMIT = 120
+    CELERY_TIME_LIMIT = 240
