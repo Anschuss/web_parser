@@ -14,7 +14,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ edition.name }}</h5>
                             <p class="card-text">{{ edition.title }}</p>
-                            <a href="{{ url_for(edition.full_news) }}" class="btn btn-primary">Читать</a>
+                            <a href="{{ url_for("news.news_page", name=edition.name) }}" class="btn btn-primary">Читать</a>
                         </div>
                     </div>
                 {% endfor %}

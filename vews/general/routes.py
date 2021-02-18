@@ -1,12 +1,11 @@
 from flask import Blueprint, render_template
-from .run_pars import get_all
 
-from app import client
+from ..models import News
 
 general = Blueprint("general", __name__)
 
-
-@general.route("/", methods=["GET", "POST"])
+@general.route("/", methods=["GET"])
 def general_page():
-    content = get_all.delay()
+    content = News.query.all()
     return render_template("general/general.html", content=content)
+

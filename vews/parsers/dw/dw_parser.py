@@ -1,7 +1,9 @@
 import requests
 import re
-
 from bs4 import BeautifulSoup
+
+from vews.parsers.write_news import write_news
+from app import client
 
 
 def get_html(url):
@@ -13,6 +15,7 @@ def get_data(html):
     soup = BeautifulSoup(html, "lxml")
     data = soup.find("div", id="bodyMover").find(class_="teaserContentWrap").find("a").get("href")
     return data
+
 
 def get_text(html):
     soup = BeautifulSoup(html, "lxml")
@@ -27,12 +30,11 @@ def get_text(html):
     return {"title": title, "intro": intro, "img": img, "body": body}
 
 
+
 def dw(url):
     html = get_html(url)
     data = get_data(html)
     html_content = get_html(url + data)
     text = get_text(html_content)
-    text["link"] = url + data
 
-    return text
-
+    write_news("dw", text, url)

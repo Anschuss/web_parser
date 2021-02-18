@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
+from vews.parsers.write_news import write_news
+
 
 def get_html(url):
     response = requests.get(url)
@@ -30,12 +32,10 @@ def get_text(html):
     return {"title": title, "img": img, "body": body}
 
 
-def main(url):
+def bbc(url):
     html = get_html(url)
     data = get_data(html)
     html = get_html(url + data)
     text = get_text(html)
 
-    text["link"] = url + data
-
-    return text
+    write_news("bbc", text, url)

@@ -2,6 +2,9 @@ import requests
 import re
 from bs4 import BeautifulSoup
 
+from ..write_news import write_news
+from app import client
+
 
 def get_html(url):
     response = requests.get(url)
@@ -27,12 +30,11 @@ def get_text(html):
     return {"title": title, "img": img, "body": body}
 
 
-def main(url):
+
+def n_plus(url):
     html = get_html(url)
     data = get_data(html)
-    html = get_html(url + data)
-    text = get_text(html)
+    html_article = get_html(url + data)
+    text = get_text(html_article)
 
-    text["link"] = url + data
-
-    return text
+    write_news("n+1", text, url)
