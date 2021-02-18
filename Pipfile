@@ -12,6 +12,9 @@ bs4 = "*"
 lxml = "*"
 amqp = "*"
 cryptography = "*"
+redis = "*"
+flask-sqlalchemy = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 

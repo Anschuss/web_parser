@@ -12,6 +12,7 @@
                     <h1>
                         {{ article.title }}
                     </h1>
+                    <p style="margin-top: 10px">{{ article.intro }}</p>
                 </div>
             </div>
             <figure class="figure" >
@@ -22,9 +23,7 @@
             </figure>
             <div class="row">
                 <div class="col-md-6">
-{#            {% for line in %}#}
-                    <p align="justify">{{ article.body  }}</p>
-{#            {% endfor %}#}
+                    <p align="justify">{{ article.body }}</p>
                 </div>
             </div>
         </div>

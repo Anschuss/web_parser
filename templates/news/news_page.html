@@ -10,21 +10,19 @@
             <div class="row">
                 <div class="col-md-8" style="margin-top: 25px; margin-bottom: 10px">
                     <h1>
-                        {{ article.title }}
+                        {{ news.title }}
                     </h1>
                 </div>
             </div>
             <figure class="figure" >
-                <img src="{{ article.img }}" class="figure-img img-fluid rounded" style="min-width: 200px; max-height: 600px">
+                <img src="{{ news.img }}" class="figure-img img-fluid rounded" style="min-width: 200px; max-height: 600px">
                 <figcaption class="figure-caption text-end">
-                    <a href="{{ article.link }}">{{ article.link }}</a>
+                    <a href="{{ news.url }}">{{ news.url }}</a>
                 </figcaption>
             </figure>
             <div class="row">
                 <div class="col-md-6">
-{#            {% for line in %}#}
-                    <p align="justify">{{ article.body  }}</p>
-{#            {% endfor %}#}
+                    <p align="justify">{{ news.body }}</p>
                 </div>
             </div>
         </div>
