@@ -21,7 +21,7 @@ def get_text(html):
     intro = article.find("p", class_="intro").text
     img = article.find("img").get("src")
     demo_body = article.find("div", class_="group")
-    txt = re.compile('[^a-zA-Zа-яА-ЯüÜäÄöÖß., ]')
+    txt = re.compile(r'\w+=\s*')
     body = txt.sub("", demo_body.text)
 
     return {"title": title, "intro": intro, "img": img, "body": body}

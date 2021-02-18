@@ -12,6 +12,7 @@ bs4 = "*"
 lxml = "*"
 amqp = "*"
 cryptography = "*"
+redis = "*"
 
 [dev-packages]
 

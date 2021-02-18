@@ -38,7 +38,7 @@ def n_pluse_one(url):
     link = get_link(url, data)
     html = get_html(link)
     img = get_img(html)
-    previe = {"name": "n+1", "img": img, "title": title, "link": url, "full_news": "n_plus.news_page"}
+    preview = {"name": "n+1", "img": img, "title": title, "full_news": "n_plus.news_page"}
 
-    return previe
+    return preview
 
