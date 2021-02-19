@@ -2,7 +2,7 @@ import requests
 import re
 from bs4 import BeautifulSoup
 
-from vews.parsers.write_news import write_news
+from views.parsers.write_news import write_news
 from app import client
 
 

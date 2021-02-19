@@ -1,6 +1,7 @@
 import datetime
+
+
 class Configuration(object):
-    DEBUG = True
     SECRET_KEY = "4e90b165e5e5380b"
 
     ### Postgres ####
@@ -18,7 +19,7 @@ class Configuration(object):
 
     CELERYBEAT_SCHEDULE = {
         'task-name': {
-            'task': 'vews.parsers.run_pars.run',  # instead 'show'
+            'task': 'views.parsers.run_pars.run',  # instead 'show'
             'schedule': datetime.timedelta(hours=3),
         },
     }
