@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-from vews.parsers.write_news import write_news
+from views.parsers.write_news import write_news
 
 
 def get_html(url):
