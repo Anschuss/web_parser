@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    general
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" style="margin-top: 20px; display: flex">
+                {% for edition in content %}
+                    <div class="card text-dark" style="width: 18rem;margin: 20px;">
+                        <img src="{{ edition.img }}" class="card-img-top" style="min-height: 200px">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ edition.name }}</h5>
+                            <p class="card-text">{{ edition.title }}</p>
+                            <a href="{{ url_for("news.news_page", name=edition.name) }}" class="btn btn-primary">Читать</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+{% endblock %}

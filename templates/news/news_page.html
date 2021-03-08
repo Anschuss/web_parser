@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    n+1 news
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class=""  style="margin: auto">
+            <div class="row">
+                <div class="col-md-8" style="margin-top: 25px; margin-bottom: 10px">
+                    <h1>
+                        {{ news.title }}
+                    </h1>
+                </div>
+            </div>
+            <figure class="figure" >
+                <img src="{{ news.img }}" class="figure-img img-fluid rounded" style="min-width: 200px; max-height: 600px">
+                <figcaption class="figure-caption text-end">
+                    <a href="{{ news.url }}">{{ news.url }}</a>
+                </figcaption>
+            </figure>
+            <div class="row">
+                <div class="col-md-6">
+                    <p align="justify">{{ news.body }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
